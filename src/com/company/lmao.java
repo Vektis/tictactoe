@@ -22,7 +22,127 @@ public class lmao {
         int oc = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                //horiz
+                if(table[i][0].equals(o) && table[i][1].equals(o)){
+                    if(!table[i][2].equals(n)){
+                        // System.out.println("lmao");
+                        break;
+                    }
+                    table[i][2] = o;
+
+                    //   System.out.println("w");
+                    return table;
+                }
+                if(table[i][2].equals(o) && table[i][1].equals(o)){
+                    if(!table[i][0].equals(n)){
+                        //   System.out.println("lmao");
+                        break;
+                    }
+                    table[i][0] = o;
+
+                    //  System.out.println("a");
+                    return table;
+                }
+                if(table[i][0].equals(o) && table[i][2].equals(o)){
+                    if(!table[i][1].equals(n)){
+                        //  System.out.println("lmao");
+                        break;
+                    }
+                    table[i][1] = o;
+                    // System.out.println("s");
+                    return table;
+                }
+                //vertical
+                if(table[0][i].equals(o) && table[1][i].equals(o)){
+                    if(!table[2][i].equals(n)){
+                        /// System.out.println("lmao");
+                        break;
+                    }
+                    table[2][i] = o;
+
+                    // System.out.println("w");
+                    return table;
+                }
+                if(table[2][i].equals(o) && table[1][i].equals(o)){
+                    if(!table[0][i].equals(n)){
+                        // System.out.println("lmao");
+                        break;
+                    }
+                    table[0][i] = o;
+
+                    //  System.out.println("a");
+                    return table;
+                }
+                if(table[0][i].equals(x) && table[2][i].equals(x)){
+                    if(!table[1][i].equals(n)){
+                        //  System.out.println("lmao");
+                        break;
+                    }
+                    table[1][i] = o;
+                    //    System.out.println("s");
+                    return table;
+                }
+                //diagonal
+                //neg slope
+                if(table[1][1].equals(o) && table[2][2].equals(o)){
+                    if(!table[0][0].equals(n)){
+                        //  System.out.println("lmao");
+                        break;
+                    }
+                    table[0][0] = o;
+                    //System.out.println("s");
+                    return table;
+                }
+                if(table[0][0].equals(o) && table[2][2].equals(o)){
+                    if(!table[1][1].equals(n)){
+                        // System.out.println("lmao");
+                        break;
+                    }
+                    table[1][1] = o;
+                    //  System.out.println("s");
+                    return table;
+                }
+                if(table[1][1].equals(o) && table[0][0].equals(o)){
+                    if(!table[2][2].equals(n)){
+                        // System.out.println("lmao");
+                        break;
+                    }
+                    table[2][2] = o;
+                    // System.out.println("s");
+                    return table;
+                }
+                //pos slope
+                if(table[1][1].equals(o) && table[0][2].equals(o)){
+                    if(!table[2][0].equals(n)){
+                        //  System.out.println("lmao");
+                        break;
+                    }
+                    table[2][0] = o;
+                    //  System.out.println("s");
+                    return table;
+                }
+                if(table[2][0].equals(o) && table[0][2].equals(o)){
+                    if(!table[1][1].equals(n)){
+                        //System.out.println("lmao");
+                        break;
+                    }
+                    table[1][1] = o;
+                    //  System.out.println("s");
+                    return table;
+                }
+                if(table[1][1].equals(o) && table[2][0].equals(o)){
+                    if(!table[0][2].equals(n)){
+                        //System.out.println("lmao");
+                        break;
+                    }
+                    table[0][2] = o;
+                    //   System.out.println("s");
+                    return table;
+                }
+
+
+
+
+                //horiz DEFENSE
                 if(table[i][0].equals(o) && table[i][1].equals(o) || table[i][0].equals(x) && table[i][1].equals(x)){
                     if(!table[i][2].equals(n)){
                        // System.out.println("lmao");
@@ -142,7 +262,27 @@ public class lmao {
                 //end of coord mov
             }
         }
-
+        //taking corners
+        if(table[0][0].equals(n) && q != 0){
+            System.out.println('c');
+            table[0][0] = o;
+            return table;
+        }
+        else if(table[2][2].equals(n)&& q != 0){
+            table[2][2] = o;
+            System.out.println('o');
+            return table;
+        }
+      else  if(table[0][2].equals(n)&& q != 0){
+            table[0][2] = o;
+            System.out.println('r');
+            return table;
+        }
+        if(table[2][0].equals(n)&& q != 0){
+            table[2][0] = o;
+            System.out.println('n');
+            return table;
+        }
 
         // random locations, no possible wins/losses at current turn
 

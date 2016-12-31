@@ -155,7 +155,7 @@ public class Main {
                 /*
                 CPU START
                  */
-                System.out.println("Player 2's turn!");
+
                 // initial move(center or corner)
                 if(!table[1][1].equals(x) && qwert == 0){
                     table[1][1]=o;
@@ -163,10 +163,11 @@ public class Main {
                 else if(qwert == 0 && table[1][1].equals(x)){
                     table[0][0]=o;  //lmao
                 }
-                //block enemy moves
+                //P2
                 lmao.nextMove(table,qwert);
                 //zxc = 0;
                 //xc = 0;
+                System.out.println("Player 2's turn!");
 
 
 
