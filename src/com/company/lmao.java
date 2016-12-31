@@ -25,118 +25,118 @@ public class lmao {
                 //horiz
                 if(table[i][0].equals(o) && table[i][1].equals(o) || table[i][0].equals(x) && table[i][1].equals(x)){
                     if(!table[i][2].equals(n)){
-                        System.out.println("lmao");
+                       // System.out.println("lmao");
                         break;
                     }
                     table[i][2] = o;
 
-                    System.out.println("w");
+                 //   System.out.println("w");
                     return table;
                 }
                if(table[i][2].equals(o) && table[i][1].equals(o) || table[i][2].equals(x) && table[i][1].equals(x)){
                    if(!table[i][0].equals(n)){
-                       System.out.println("lmao");
+                    //   System.out.println("lmao");
                        break;
                    }
                     table[i][0] = o;
 
-                   System.out.println("a");
+                 //  System.out.println("a");
                     return table;
                 }
                 if(table[i][0].equals(o) && table[i][2].equals(o)||table[i][0].equals(x) && table[i][2].equals(x)){
                     if(!table[i][1].equals(n)){
-                        System.out.println("lmao");
+                      //  System.out.println("lmao");
                         break;
                     }
                     table[i][1] = o;
-                    System.out.println("s");
+                   // System.out.println("s");
                     return table;
                 }
                 //vertical
                 if(table[0][i].equals(o) && table[1][i].equals(o) || table[0][i].equals(x) && table[1][i].equals(x)){
                     if(!table[2][i].equals(n)){
-                        System.out.println("lmao");
+                       /// System.out.println("lmao");
                         break;
                     }
                     table[2][i] = o;
 
-                    System.out.println("w");
+                   // System.out.println("w");
                     return table;
                 }
                 if(table[2][i].equals(o) && table[1][i].equals(o) || table[2][i].equals(x) && table[1][i].equals(x)){
                     if(!table[0][i].equals(n)){
-                        System.out.println("lmao");
+                       // System.out.println("lmao");
                         break;
                     }
                     table[0][i] = o;
 
-                    System.out.println("a");
+                  //  System.out.println("a");
                     return table;
                 }
                 if(table[0][i].equals(o) && table[2][i].equals(o)||table[0][i].equals(x) && table[2][i].equals(x)){
                     if(!table[1][i].equals(n)){
-                        System.out.println("lmao");
+                      //  System.out.println("lmao");
                         break;
                     }
                     table[1][i] = o;
-                    System.out.println("s");
+                //    System.out.println("s");
                     return table;
                 }
                 //diagonal
                 //neg slope
                 if(table[2][2].equals(o) && table[1][1].equals(o)||table[1][1].equals(x) && table[2][2].equals(x)){
                     if(!table[0][0].equals(n)){
-                        System.out.println("lmao");
+                      //  System.out.println("lmao");
                         break;
                     }
                     table[0][0] = o;
-                    System.out.println("s");
+                    //System.out.println("s");
                     return table;
                 }
                 if(table[2][2].equals(o) && table[0][0].equals(o)||table[0][0].equals(x) && table[2][2].equals(x)){
                     if(!table[1][1].equals(n)){
-                        System.out.println("lmao");
+                       // System.out.println("lmao");
                         break;
                     }
                     table[1][1] = o;
-                    System.out.println("s");
+                  //  System.out.println("s");
                     return table;
                 }
                 if(table[0][0].equals(o) && table[1][1].equals(o)||table[1][1].equals(x) && table[0][0].equals(x)){
                     if(!table[2][2].equals(n)){
-                        System.out.println("lmao");
+                       // System.out.println("lmao");
                         break;
                     }
                     table[2][2] = o;
-                    System.out.println("s");
+                   // System.out.println("s");
                     return table;
                 }
                 //pos slope
                 if(table[0][2].equals(o) && table[1][1].equals(o)||table[1][1].equals(x) && table[0][2].equals(x)){
                     if(!table[2][0].equals(n)){
-                        System.out.println("lmao");
+                      //  System.out.println("lmao");
                         break;
                     }
                     table[2][0] = o;
-                    System.out.println("s");
+                  //  System.out.println("s");
                     return table;
                 }
                 if(table[0][2].equals(o) && table[2][0].equals(o)||table[2][0].equals(x) && table[0][2].equals(x)){
                     if(!table[1][1].equals(n)){
-                        System.out.println("lmao");
+                        //System.out.println("lmao");
                         break;
                     }
                     table[1][1] = o;
-                    System.out.println("s");
+                  //  System.out.println("s");
                     return table;
                 }
                 if(table[2][0].equals(o) && table[1][1].equals(o)||table[1][1].equals(x) && table[2][0].equals(x)){
                     if(!table[0][2].equals(n)){
-                        System.out.println("lmao");
+                        //System.out.println("lmao");
                         break;
                     }
                     table[0][2] = o;
-                    System.out.println("s");
+                 //   System.out.println("s");
                     return table;
                 }
                 //end of coord mov
@@ -154,6 +154,20 @@ public class lmao {
                     return table;
                 }
             }
+        }
+       int nn = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(table[i][j].equals(o) || table[i][j].equals(x)){
+                   // System.out.println(nn);
+                    nn++;
+                }
+            }
+        }
+        if(nn ==9){
+            System.out.println("Tie game!");
+            System.exit(0);
+          //  return table;
         }
 
         return table;

@@ -10,6 +10,7 @@ public class Main {
         mode 2 = PvCPU(never lose, only tie or win)
          */
         boolean [] tc = {true,true,true,true,true,true};
+        int nn = 0;
         int qwert = 0;
         String x = "x";
         String o = "o";
@@ -111,7 +112,9 @@ public class Main {
             System.out.println("Player 1 = You, Player 2 = Computer(Expert)");
             while (true) {
 
+
                 int p1x, p1y, p2x, p2y;
+
                 System.out.println("Player 1 turn(X): ");
                 System.out.println("Which horizontal position?(across-1,2,3): ");
                 p1x = input.nextInt() - 1;
@@ -195,18 +198,7 @@ public class Main {
                     qwert++;
                     //System.out.println("  |   |");
                 }
-                int nn = 0;
-                for (int i = 0; i < 3; i++) {
-                    for (int j = 0; j < 3; j++) {
-                        if(table[i][j].equals(o) || table[i][j].equals(x)){
-                            nn++;
-                        }
-                    }
-                }
-                if(nn == 0){
-                    System.out.println("Tie game");
-                    return;
-                }
+
 
             }
 
