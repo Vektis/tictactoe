@@ -9,6 +9,8 @@ public class Main {
         mode 1 = PvP
         mode 2 = PvCPU(never lose, only tie or win)
          */
+        boolean [] tc = {true,true,true,true,true,true};
+        int qwert = 0;
         String x = "x";
         String o = "o";
         String n = " ";
@@ -104,10 +106,11 @@ public class Main {
         PVE(CPU) START
         CPU goes 2nd
          */
+
         else {
             System.out.println("Player 1 = You, Player 2 = Computer(Expert)");
             while (true) {
-                int qwert = 0;
+
                 int p1x, p1y, p2x, p2y;
                 System.out.println("Player 1 turn(X): ");
                 System.out.println("Which horizontal position?(across-1,2,3): ");
@@ -154,73 +157,11 @@ public class Main {
                 if(!table[1][1].equals(x) && qwert == 0){
                     table[1][1]=o;
                 }
-                else{
+                else if(qwert == 0 && table[1][1].equals(x)){
                     table[0][0]=o;  //lmao
                 }
                 //block enemy moves
-                int xc = 0;
-                int zxc = 0;
-                int count = 0;
-                int count1 = 0;
-                boolean c = true;
-                for (int i = 0; i < table.length; i++) {
-                    for (int j = 0; j < 3; j++) {
-                        if(table[j][i].equals(x)){
-                            zxc++;
-                            if(zxc==2){
-                                //c = false;
-                                System.out.println("wew lad");
-                                if(table[2][i].equals(x) && table[1][i].equals(x)){
-                                    table[0][i] = o;
-
-                                    count++;
-                                    break;
-
-                                }
-                                else if(table[0][i].equals(x) && table[1][i].equals(x)){
-                                    table[2][i] = o;
-
-                                    count++;
-                                    break;
-                                }
-                                else if(table[0][i].equals(x) && table[2][i].equals(x)){
-                                    table[1][i] = o;
-                                    count++;
-                                    break;
-                                }
-                            }
-                            //break;
-                        }
-
-
-                        if(table[i][j].equals(x) && c){
-                            xc++;
-                            if(xc==2){
-                                System.out.println("ayy lmao");
-                                if(table[i][2].equals(x) && table[i][1].equals(x)){
-                                    table[i][0] = o;
-                                    break;
-                                }
-                                else if(table[i][0].equals(x) && table[i][1].equals(x)){
-                                    table[i][2] = o;
-                                    break;
-                                }
-                                else if(table[i][0].equals(x) && table[i][2].equals(x)){
-                                    table[i][1] = o;
-                                    break;
-                                }
-                                //break;
-                            }
-
-                        }
-
-
-                        //break;
-
-                    }
-
-
-                }
+                lmao.nextMove(table,qwert);
                 //zxc = 0;
                 //xc = 0;
 
@@ -234,7 +175,7 @@ public class Main {
                  */
                 for (int i = 0; i < 3; i++) {
                     System.out.println(table[i][0] + " | " + table[i][1] + " | " + table[i][2]);
-                    //System.out.println("  |   |");
+                  //  //System.out.println("  |   |");
                 }
                 for (int i = 0; i < 3; i++) {
                     //System.out.println(table[i][0].equals(x) && table[i][1].equals(x) && table[i][2].equals(x));
@@ -254,7 +195,18 @@ public class Main {
                     qwert++;
                     //System.out.println("  |   |");
                 }
-
+                int nn = 0;
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if(table[i][j].equals(o) || table[i][j].equals(x)){
+                            nn++;
+                        }
+                    }
+                }
+                if(nn == 0){
+                    System.out.println("Tie game");
+                    return;
+                }
 
             }
 
