@@ -21,7 +21,7 @@ public class Main {
             //System.out.println("  |   |");
         }
         Scanner input = new Scanner(System.in);
-        System.out.println("1 for PvP, 2 for PvE.");
+        System.out.println("1 for PvP, anything else for PvE(vs ai).");
         // (1)PVP BELOW
         if (input.nextInt() == 1) {
             while (true) {
